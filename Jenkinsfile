@@ -30,8 +30,4 @@ node ('docker-agent') {
         /* Remove the local docker image. */
           sh 'docker rmi jassi1203/docker-jenkins-app:latest'      
     }
-    stage ('Run Application') {
-    /* Run the application using Docker images from Docker hub. */
-          sh 'docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name angularapp --rm jassi1203/docker-jenkins-app:latest'      
-    }
-}
+ }
