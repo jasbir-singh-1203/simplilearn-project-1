@@ -7,7 +7,8 @@ node ('docker-agent') {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh 'usermod -a -G docker $USER'
+       
+        sh 'groups'
         app = docker.build("jassi1203/docker-jenkins-app")
     }
     stage('Test image') {
