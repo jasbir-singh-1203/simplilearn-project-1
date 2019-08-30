@@ -28,7 +28,7 @@ node ('docker-agent') {
     }
     stage('Clearnup') {
         /* Remove the local docker image. */
-          /*sh 'docker rmi $app'*/      
+          sh 'docker rmi jassi1203/docker-jenkins-app:latest'      
     }
     stage ('Run Application') {
     /* Run the application using Docker images from Docker hub. */
