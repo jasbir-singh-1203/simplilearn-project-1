@@ -1,5 +1,3 @@
-pipeline {
-    agent any
 Node ('docker-agent') {
     def app
     stage('Clone repository') {
@@ -34,5 +32,4 @@ Node ('docker-agent') {
     /* Run the application using Docker images from Docker hub. */
           sh 'docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name angularapp --rm jassi1203/docker-jenkins-app:latest'      
     }
- }
 }
