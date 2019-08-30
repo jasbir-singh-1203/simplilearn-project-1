@@ -8,7 +8,7 @@ node ('docker-agent') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
        
-        sh 'groups'
+        /*sh 'groups'*/
         app = docker.build("jassi1203/docker-jenkins-app")
     }
     stage('Test image') {
@@ -28,7 +28,7 @@ node ('docker-agent') {
     }
     stage('Clearnup') {
         /* Remove the local docker image. */
-          sh 'docker rmi $app'      
+          /*sh 'docker rmi $app'*/      
     }
     stage ('Run Application') {
     /* Run the application using Docker images from Docker hub. */
